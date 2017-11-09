@@ -1,49 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4C235092-820C-4DEB-9074-D356FB797D8B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Org.BouncyCastle</RootNamespace>
     <AssemblyName>BouncyCastle.OpenPgp</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\lib\net20</OutputPath>
-    <IntermediateOutputPath>obj\Debug\lib\net20</IntermediateOutputPath>
-    <DefineConstants>DEBUG;TRACE;INCLUDE_IDEA;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\lib\net20</OutputPath>
-    <IntermediateOutputPath>obj\Release\lib\net20</IntermediateOutputPath>
-    <DefineConstants>TRACE;INCLUDE_IDEA;</DefineConstants>
-    <DocumentationFile>doc\BouncyCastle.OpenPgp.xml</DocumentationFile>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+    <RootNamespace>Org.BouncyCastle</RootNamespace>
+    <TargetFrameworks>net20;netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSource>True</IncludeSource>
+    <NoWarn>$(NoWarn);618;1591</NoWarn>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\BouncyCastle.snk</AssemblyOriginatorKeyFile>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
+
+  <PropertyGroup>
+    <Version>1.8.1.1</Version>
+    <Title>BouncyCastle OpenPGP-only</Title>
+    <Product>Bouncy Castle for .NET</Product>
+    <Company>The Legion of the Bouncy Castle Inc.</Company>
+    <Authors>Bouncy Castle Project Contributors</Authors>
+    <Description>A subset of the full BouncyCastle API targeted at OpenPGP functionality only to reduce the footprint.</Description>
+    <PackageProjectUrl>https://www.bouncycastle.org/csharp</PackageProjectUrl>
+    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/nano-byte/bc-csharp</RepositoryUrl>
+    <PackageTags>bouncycastle, cryptography, openpgp</PackageTags>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="bzip2\src\BZip2Constants.cs" />
     <Compile Include="bzip2\src\CBZip2InputStream.cs" />
@@ -718,11 +710,5 @@
     <Compile Include="src\util\zlib\ZOutputStream.cs" />
     <Compile Include="src\util\zlib\ZStream.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Contributors.html" />
-    <None Include="License.html" />
-    <None Include="Readme.html" />
-    <None Include="checklist.txt" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
 </Project>
